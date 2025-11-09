@@ -1,0 +1,29 @@
+# Code Owners
+# This file defines who owns different parts of the codebase
+# and who should review changes to those areas
+
+# Global owners - require review for all changes
+* @Evrouin
+
+# Core application code
+/src/tilapia_freshness/ @Evrouin
+
+# Configuration and build files
+/pyproject.toml @Evrouin
+/requirements*.txt @Evrouin
+/Makefile @Evrouin
+
+# CI/CD and workflows
+/.github/ @Evrouin
+
+# Documentation
+/README.md @Evrouin
+/CHANGELOG.md @Evrouin
+/CONTRIBUTING.md @Evrouin
+
+# Security-related files
+/.github/SECURITY.md @Evrouin
+/.github/CODEOWNERS @Evrouin
+
+# Tests
+/tests/ @Evrouin
