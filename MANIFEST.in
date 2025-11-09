@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+include CHANGELOG.md
+include CONTRIBUTING.md
+include requirements.txt
+include requirements-dev.txt
+recursive-include src/tilapia_freshness/assets *
+global-exclude __pycache__
+global-exclude *.py[co]
