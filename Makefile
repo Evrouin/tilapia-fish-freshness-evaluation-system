@@ -15,7 +15,7 @@ format:  ## Format code with black and isort
 	isort src/ tests/
 
 lint:  ## Run flake8 linter
-	flake8 src/ tests/
+	flake8 src/ tests/ --extend-ignore=E203,W503,E501
 
 type-check:  ## Run mypy type checker
 	mypy src/

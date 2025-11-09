@@ -23,15 +23,13 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Image Processing",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 keywords = ["computer-vision", "fish-freshness", "yolo", "opencv", "image-processing"]
-requires-python = ">=3.8"
+requires-python = ">=3.11"
 dependencies = [
     "opencv-python==4.12.0.88",
     "pillow==12.0.0",
@@ -90,7 +88,7 @@ ignore_missing_imports = true
 # Black configuration
 [tool.black]
 line-length = 88
-target-version = ['py38', 'py39', 'py310', 'py311']
+target-version = ['py311', 'py312']
 include = '\.pyi?$'
 extend-exclude = '''
 /(
