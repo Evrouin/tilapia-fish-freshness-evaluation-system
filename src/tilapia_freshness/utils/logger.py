@@ -88,7 +88,10 @@ class AppLogger:
         return self.logger
 
     def log_error(
-        self, message: str, exception: Optional[Exception] = None, module: Optional[str] = None
+        self,
+        message: str,
+        exception: Optional[Exception] = None,
+        module: Optional[str] = None,
     ) -> None:
         """Log error with structured format.
 
@@ -171,7 +174,9 @@ class AppLogger:
         analysis_logger.info(log_message)
 
 
-def log_error(message: str, exception: Optional[Exception] = None, module: Optional[str] = None) -> None:
+def log_error(
+    message: str, exception: Optional[Exception] = None, module: Optional[str] = None
+) -> None:
     """Global error logging function.
 
     Args:

@@ -17,7 +17,10 @@ class GillSegmenter:
         pass
 
     def segment_gill(
-        self, image: np.ndarray, bbox: Tuple[int, int, int, int], iterations: Optional[int] = None
+        self,
+        image: np.ndarray,
+        bbox: Tuple[int, int, int, int],
+        iterations: Optional[int] = None,
     ) -> Tuple[np.ndarray, np.ndarray]:
         """Segment gill area using GrabCut.
 

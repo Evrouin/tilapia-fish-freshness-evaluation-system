@@ -14,7 +14,10 @@ class YOLODetector:
     """YOLOv3 detector for tilapia gill identification with lazy loading."""
 
     def __init__(
-        self, config_path: Optional[str] = None, weights_path: Optional[str] = None, names_path: Optional[str] = None
+        self,
+        config_path: Optional[str] = None,
+        weights_path: Optional[str] = None,
+        names_path: Optional[str] = None,
     ) -> None:
         """Initialize YOLO detector with lazy loading.
 
@@ -72,7 +75,10 @@ class YOLODetector:
             raise ModelLoadError("Failed to load YOLO model", str(e))
 
     def detect(
-        self, image: np.ndarray, conf_thresh: Optional[float] = None, nms_thresh: Optional[float] = None
+        self,
+        image: np.ndarray,
+        conf_thresh: Optional[float] = None,
+        nms_thresh: Optional[float] = None,
     ) -> Tuple[List, List, List, List]:
         """Detect objects in image.
 
