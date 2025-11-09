@@ -1,6 +1,38 @@
 # Tilapia Fish Freshness Evaluation System
 
+[![PyPI version](https://badge.fury.io/py/tilapia-freshness-evaluator.svg)](https://badge.fury.io/py/tilapia-freshness-evaluator)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A computer vision system for evaluating tilapia fish freshness using YOLOv3 object detection, GrabCut segmentation, and advanced RGB color analysis.
+
+## 📦 Installation
+
+### Quick Install (Recommended)
+```bash
+pip install tilapia-freshness-evaluator
+```
+
+### From Source
+```bash
+git clone https://github.com/Evrouin/tilapia-fish-freshness-evaluation-system.git
+cd tilapia-fish-freshness-evaluation-system
+pip install -e .
+```
+
+## 🚀 Usage
+
+### Command Line
+```bash
+# Run the application
+tilapia-freshness
+```
+
+### Python Script
+```python
+from tilapia_freshness.gui.main_window import main
+main()
+```
 
 ## Features
 - **Object Detection**: Custom YOLOv3 model for tilapia gill identification
@@ -33,9 +65,9 @@ A computer vision system for evaluating tilapia fish freshness using YOLOv3 obje
 
 ## Prerequisites
 - Python 3.11+
-- Required packages listed in `requirements.txt`
+- Required packages automatically installed with pip
 
-## Installation
+## Development Installation
 
 ### 1. Clone Repository
 ```bash
