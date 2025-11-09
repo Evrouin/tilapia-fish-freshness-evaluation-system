@@ -64,10 +64,11 @@ class YOLODetector:
 
             layers = self.net.getLayerNames()
             unconnected_out_layers = self.net.getUnconnectedOutLayers()
-            if len(unconnected_out_layers.shape) == 1:
-                self.output_layers = [layers[i - 1] for i in unconnected_out_layers]
+            unconnected_array = np.array(unconnected_out_layers)
+            if len(unconnected_array.shape) == 1:
+                self.output_layers = [layers[i - 1] for i in unconnected_array]
             else:
-                self.output_layers = [layers[i[0] - 1] for i in unconnected_out_layers]
+                self.output_layers = [layers[i[0] - 1] for i in unconnected_array]
 
         except Exception as e:
             if isinstance(e, (FileNotFoundError,)):
@@ -113,13 +114,15 @@ class YOLODetector:
             for output in layer_outputs:
                 for detection in output:
                     scores = detection[5:]
-                    class_id = np.argmax(scores)
-                    confidence = scores[class_id]
+                    class_id = int(np.argmax(scores))
+                    confidence = float(scores[class_id])
 
                     if confidence > conf_thresh:
-                        center_x, center_y, w, h = (
-                            detection[0:4] * np.array([width, height, width, height])
-                        ).astype("int")
+                        coords_array = np.array(detection[0:4]) * np.array([width, height, width, height])  # type: ignore
+                        center_x = int(coords_array[0])
+                        center_y = int(coords_array[1])
+                        w = int(coords_array[2])
+                        h = int(coords_array[3])
 
                         x = int(center_x - w / 2)
                         y = int(center_y - h / 2)

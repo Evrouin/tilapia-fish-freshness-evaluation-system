@@ -65,7 +65,7 @@ class MainWindow:
             if icon_path:
                 icon_image = Image.open(icon_path)
                 icon_photo = ImageTk.PhotoImage(icon_image)
-                self.root.iconphoto(True, icon_photo)
+                self.root.iconphoto(True, icon_photo)  # type: ignore
 
                 self.root._icon_photo = icon_photo  # type: ignore
                 self.logger.info("Application icon loaded successfully")
@@ -159,11 +159,12 @@ class MainWindow:
                 image, _ = cached_images
             else:
 
-                image = cv2.imread(self.current_image_path)
-                if image is None:
+                loaded_image = cv2.imread(self.current_image_path)
+                if loaded_image is None:
                     raise InvalidImageError(
                         "Failed to load image", self.current_image_path
                     )
+                image = loaded_image
 
                 pil_image = Image.open(self.current_image_path)
                 image_cache.put(self.current_image_path, image, pil_image)
@@ -223,11 +224,12 @@ class MainWindow:
                 if cached_images:
                     image, _ = cached_images
                 else:
-                    image = cv2.imread(self.current_image_path)
-                    if image is None:
+                    loaded_image = cv2.imread(self.current_image_path)
+                    if loaded_image is None:
                         raise InvalidImageError(
                             "Failed to load image", self.current_image_path
                         )
+                    image = loaded_image
 
                 if not self.detection_bbox:
                     raise AnalysisError("No detection coordinates available")

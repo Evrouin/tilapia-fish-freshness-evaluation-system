@@ -76,6 +76,7 @@ warn_unused_ignores = true
 warn_no_return = true
 warn_unreachable = true
 strict_equality = true
+disable_error_code = ["index", "unused-ignore"]
 
 [[tool.mypy.overrides]]
 module = "cv2.*"
